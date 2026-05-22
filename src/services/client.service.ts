@@ -1,0 +1,46 @@
+import { api } from "./api";
+import type { Client } from "../types/client";
+
+export type ClientPayload = {
+  name: string;
+  phone: string;
+};
+
+export const getClients = async (): Promise<Client[]> => {
+  const response = await api.get("/clients");
+  // console.log(response.data.data);
+  return response.data.data;
+};
+export const getClientsList = async (
+  page = 1,
+  limit = 10,
+  search = ""
+) => {
+  const response = await api.get("/clients/all", {
+    params: { page, limit, search },
+  });
+
+  return response.data;
+};
+export const getClientById = async (id: number) => {
+  const response = await api.get(`/clients/${id}`);
+  return response.data.data;
+
+};
+
+export const createClient = async (payload: ClientPayload): Promise<Client> => {
+  const response = await api.post("/clients", payload);
+  return response.data.data.client;
+};
+
+export const updateClient = async (
+  id: number,
+  payload: ClientPayload,
+): Promise<Client> => {
+  const response = await api.put(`/clients/${id}`, payload);
+  return response.data.data.client;
+};
+
+export const deleteClient = async (id: number): Promise<void> => {
+  await api.delete(`/clients/${id}`);
+};
