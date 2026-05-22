@@ -1,20 +1,20 @@
 import { api } from "./api";
 
-export const getSales = async (page = 1, limit = 20) => {
+export const getSales = async (page: number, limit: number) => {
   const response = await api.get(`/sales?page=${page}&limit=${limit}`);
 
+  // console.log(response.data.data);
   return response.data.data;
 };
 export const getSalestats = async () => {
-  const response = await api.get(`/sales?page=${0}&limit=${5}`);
-
+  const response = await api.get(`/sales?page=${1}&limit=${5}`);
   return response.data.data;
 };
 
 export const getSalesStats = async () => {
   const res = await api.get("/sales/stats");
 
-  console.log(res.data);
+  // console.log(res.data);
 
   return res.data;
 };

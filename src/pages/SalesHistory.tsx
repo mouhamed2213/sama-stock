@@ -4,7 +4,7 @@ import {
   Search,
   ChevronLeft,
   ChevronRight,
-   Wallet,
+  Wallet,
   CreditCard,
   AlertCircle,
   Calendar,
@@ -100,6 +100,8 @@ export default function SalesHistory() {
       ]);
 
       setSales(response?.sales || []);
+
+      console.log(response);
 
       setPagination(
         response?.pagination || {

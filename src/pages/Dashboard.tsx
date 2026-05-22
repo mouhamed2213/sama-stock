@@ -77,6 +77,7 @@ export default function DashboardAlt() {
 
         setSales(Array.isArray(salesData.sales) ? salesData.sales : []);
 
+        console.log(salesData.sales ? salesData.sales : [])
         const prods = productsData?.data || productsData || [];
 
         setProducts(prods);

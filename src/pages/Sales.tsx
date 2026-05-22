@@ -328,7 +328,7 @@ export default function Sales() {
     } catch (error) {
       console.error(error);
       toast.error(
-        "Erreur lors de la vente. Vérifier si la caisse est ouverte.",
+        "Erreur lors de la vente.",
       );
     } finally {
       setSubmitting(false);
