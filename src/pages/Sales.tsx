@@ -736,9 +736,7 @@ const handleCustomPriceValueChange = (productId: number, value: string) => {
       <p className="text-xs text-stone-500 mt-1">
         {item.unitPrice.toLocaleString()} F
       </p>
-    </div>
-
-    {/* Section de modification du prix par produit */}
+          {/* Section de modification du prix par produit */}
     <div className="flex items-center gap-2 bg-stone-50 p-2 rounded-xl border border-stone-100">
       <label className="flex items-center gap-1 text-xs text-stone-600 cursor-pointer">
         <input 
@@ -759,6 +757,9 @@ const handleCustomPriceValueChange = (productId: number, value: string) => {
         className="w-24 text-xs border border-stone-200 rounded-lg px-2 py-1 disabled:bg-stone-100 disabled:text-stone-400"
       />
     </div>
+    </div>
+
+
 
     <div className="flex items-center gap-2">
       <div className="flex items-center border border-stone-200 rounded-xl">
